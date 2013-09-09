@@ -65,6 +65,36 @@ class UI
   end #getDifficulty
 
   def drawBoard
+    puts "\e[H\e[2J" if $stdout.isatty # clear the screen
+    puts "AI Opponent"
+    11.times {print "-"}
+    print "\n"
+
+    5.times {|unit| print "|#{unit}"}
+    print "| <- Unit number\n"
+    5.times {print "| "}
+    print "| <- Bases\n"
+    5.times {print "| "}
+    print "| <- Defenders\n"
+    5.times {print "| "}
+    print "| <- Attackers\n"
+
+    11.times {print "-"}
+    print "\n"
+
+    5.times {print "| "}
+    print "| <- Attackers\n"
+    5.times {print "| "}
+    print "| <- Defenders\n"
+    5.times {print "| "}
+    print "| <- Bases\n"
+    5.times {|unit| print "|#{unit}"}
+    print "| <- Unit number\n"
+
+    11.times {print "-"}
+    print "\n"
+    puts "#{@player_info[:player].name}".center(11)
+    puts ""
   end #drawBoard
 
 end #UI
@@ -82,19 +112,22 @@ class Game
   def turns
     if @first_turn == 1
       playerTurn
+      aiTurn
     else
       aiTurn
+      playerTurn
     end
   end #turns
 
   def playerTurn
+    gets
   end #playerTurn
 
   def aiTurn
   end #aiTurn
 
   def isWinner?
-    true
+    false
   end #isWinner?
 end #Game
 
