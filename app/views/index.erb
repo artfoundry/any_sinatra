@@ -1,19 +1,36 @@
 <center>
   <h1>Any</h1>
-<h3>Welcome to Any!<br>
-  <br>
-  A game of combat strategy that's easy enough for <i>any</i>one to learn,<br>
-  but not so easy for <i>any</i>one to master.</h3>
+<h3>
+  Welcome to Any!
+  <p>
+    A game of combat strategy that's easy enough for <i>any</i>one to learn,
+  </p>
+  <p>
+    but not so easy for <i>any</i>one to master.
+  </p>
+</h3>
 
-<br>
-<a href="instr.erb">Read the instructions</a> or...<br>
-<br>
-...enter your name and difficulty level below to play:
+<p>
+<a href="instr.erb">Read the instructions</a> or...
+</p>
+<p>
+...enter your name and settings below to play:
+</p>
 <form action="/play" method="post">
   <input type="text" name="name" placeholder="Name" required>
-  <br>
-  Hard: <input type="radio" name="diff" value="hard" require><br>
-  Easy: <input type="radio" name="diff" value="easy" required><br>
+<p>
+  Hard: <input type="radio" name="diff" value="hard">
+</p>
+<p>
+  Easy: <input type="radio" name="diff" value="easy" checked>
+</p>
+  Will player 2 be a person or the computer?
+<p>
+  AI: <input type="radio" name="ai" value="true" checked>
+</p>
+<p>
+  Person: <input type="radio" name="ai" value="false">
+</p>
   <input type="submit">
 </form>
 </center>

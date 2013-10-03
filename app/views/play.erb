@@ -3,14 +3,15 @@
 <p>
 <table>
     <th colspan="5">
-        <h3>AI Opponent</h3>
+        <h3><%= @players[1].name %></h3>
+        <%= @players[1].hand %>
         <hr width=100px>
     </th>
     <tr align=center>
         <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td><- Unit number</td>
     </tr>
     <tr>
-        <td><img src="tile_empty.jpg"></td>
+        <td><img id="b1" src="tile_empty.jpg" alt="b1"></td>
         <td><img src="tile_empty.jpg"></td>
         <td><img src="tile_empty.jpg"></td>
         <td><img src="tile_empty.jpg"></td>
@@ -65,7 +66,11 @@
     </tr>
     <th colspan="5">
         <hr width=100px>
-        <%= @player %>
+        <h3><%= @players[0].name %></h3>
+        <%= @players[0].hand %>
+        <form action="/startturn" method="get">
+            <input type="submit" value="Start turn">
+        </form>
     </th>
 </table>
 </p>
